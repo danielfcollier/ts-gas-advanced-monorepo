@@ -1,6 +1,7 @@
 npm install
 
-clasp create --type standalone 'Web App Example' --rootDir .gas
+clasp create --type standalone --title 'Web App Example' --rootDir .gas
+mv .gas/.clasp.json .
 
 Served webapp at .app directory and google script files in .gas directory.
 

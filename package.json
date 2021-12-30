@@ -4,11 +4,11 @@
   "description": "",
   "scripts": {
     "test": "echo 'Test: no test specified'",
-    "build": "npm run build:pre && npm run build:client && npm run build:server && npm run build:post && clasp push",
+    "build": "npm run build:client && npm run build:server && npm run build:post && clasp push && npm run build:pre",
     "build:pre": "ls .gas/ | grep -wv json | awk '$0=\".gas/\"$0' | xargs rm -rf",
     "build:post": "rm -rf .parcel-cache",
     "build:client": "parcel build --no-optimize --no-cache --no-source-maps --dist-dir .gas src/client/*.html",
-    "build:server": "ls src/ | grep -wv client | awk '{ system(\"cp -r src/\" $0 \" .gas/src\") }'",
+    "build:server": "ls src/ | grep -wv client | awk '{ system(\"cp -r src/\" $0 \" .gas/src\") }' && cp -r config .gas",
     "dev:start": "parcel serve --no-cache --no-source-maps --dist-dir .gas src/client/*.html",
     "dev:clear": "npm run build:pre && npm run build:post",
     "dev:watch": "onchange \"**/*\" -- npm run dev:onchange",

@@ -3,18 +3,13 @@
     "browser": true,
     "es2021": true
   },
-  "extends": [
-    "google",
-    "prettier"
-  ],
+  "extends": ["google", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": ["@typescript-eslint"],
   "rules": {
     "brace-style": [
       2,
@@ -24,14 +19,8 @@
       }
     ],
     "curly": "error",
-    "indent": [
-      "error",
-      2
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
     "max-len": [
       "error",
       {
@@ -42,10 +31,7 @@
     "no-console": [
       "error",
       {
-        "allow": [
-          "warn",
-          "error"
-        ]
+        "allow": ["warn", "error"]
       }
     ],
     "no-eval": "error",
@@ -60,16 +46,10 @@
       }
     ],
     "no-var": "error",
-    "object-curly-spacing": [
-      "error",
-      "always"
-    ],
+    "object-curly-spacing": ["error", "always"],
     "object-shorthand": "error",
     "prefer-const": "error",
-    "quotes": [
-      "error",
-      "single"
-    ],
+    "quotes": ["error", "single"],
     "radix": "error",
     "require-jsdoc": [
       "error",
@@ -83,9 +63,6 @@
         }
       }
     ],
-    "semi": [
-      "error",
-      "always"
-    ]
+    "semi": ["error", "always"]
   }
 }

@@ -1,0 +1,40 @@
+{
+  "name": "ts-gas-advanced-monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "parcel build client/*.html --no-minify --no-cache --no-source-maps && rm dist/*.js && rm .gas/*.js && node utils.js && rm dist/* && rmdir dist && clasp push",
+    "watch:old": "nodemon --watch client --watch server --exec \"npm run build\" --ext js,html,scss,css",
+    "test": "echo 'Test: no test specified'",
+    "watch": "onchange \"**/*\" -- npm run onchange",
+    "onchange": "npm run pretty:start && clasp push",
+    "prepare": "husky install",
+    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.jsx,.tsx,.html,.css,.scss . --fix",
+    "pretty:start": "npx prettier --write .",
+    "pretty:quick": "pretty-quick --ignore-path .prettierignore --config .prettierrc.json --pattern '**/*.{ts,js}'",
+    "pretty:staged": "npm run pretty:quick -- --staged"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/clasp": "^2.4.1",
+    "parcel-plugin-inliner": "^1.0.16",
+    "posthtml": "^0.16.5",
+    "posthtml-inline-assets": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/google-apps-script": "^1.0.41",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "eslint": "^8.5.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.4",
+    "onchange": "^7.1.0",
+    "prettier": "^2.5.1",
+    "pretty-quick": "^3.1.3",
+    "typescript": "^4.5.4"
+  }
+}

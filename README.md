@@ -3,7 +3,7 @@ https://script.google.com/macros/s/AKfycbwYqTPB-IY7U2MiXCyrMIch1FpwYQqtYGxG3NALl
 
 ```bash
 npm install
-clasp create --type standalone --title 'Web App Example' --rootDir .gas mv .gas/.clasp.json .
+clasp create --type standalone --title 'Web App Example' --rootDir .gas && mv .gas/.clasp.json .
 ```
 
 other type options:
